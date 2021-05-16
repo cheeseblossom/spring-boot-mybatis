@@ -1,0 +1,8 @@
+# Common
+spring:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:mariadb://localhost:3306/temporary_project
+      driver-class-name: org.mariadb.jdbc.Driver
+      username: temp
+      password: temp

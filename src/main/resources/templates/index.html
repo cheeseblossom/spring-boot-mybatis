@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Page</title>
+</head>
+<body>
+  <div th:each="map : ${result}">
+    <div th:each="person : ${map.value}">
+      <div th:text="'first name : ' + ${person.getFirstName()}"></div>
+      <div th:text="'last name : ' + ${person.getLastName()}"></div>
+      <br>
+    </div>
+  </div>
+</body>
+</html>
