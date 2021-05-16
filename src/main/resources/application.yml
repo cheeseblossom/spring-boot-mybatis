@@ -9,3 +9,11 @@ spring:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+logging:
+  level:
+    root: info
+    playground:
+      cheeseblossom:
+        mybatis: debug
+      springframework:
+        jdbc: trace
