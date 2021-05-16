@@ -24,6 +24,12 @@ public class MyBatisConfig {
   }
 
   @Bean
+  @ConfigurationProperties(prefix = "mybatis.configuration")
+  public org.apache.ibatis.session.Configuration mybatisConfiguration() {
+    return new org.apache.ibatis.session.Configuration();
+  }
+
+  @Bean
   public DataSource dataSource() {
     return new HikariDataSource(hikariConfig());
   }
@@ -32,6 +38,7 @@ public class MyBatisConfig {
   public SqlSessionFactory sqlSessionFactory() throws Exception {
     SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
     factoryBean.setDataSource(dataSource());
+    factoryBean.setConfiguration(mybatisConfiguration());
     return factoryBean.getObject();
   }
 

@@ -6,3 +6,6 @@ spring:
       driver-class-name: org.mariadb.jdbc.Driver
       username: temp
       password: temp
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
